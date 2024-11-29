@@ -33,6 +33,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import com.bootcamp.ejerciciocatorcekotlin.components.CustomButton
+
+
 import com.bootcamp.ejerciciocatorcekotlin.components.Space
 import com.bootcamp.ejerciciocatorcekotlin.state.Patient
 import com.bootcamp.ejerciciocatorcekotlin.components.SegmentedButtonSingleSelect
@@ -46,7 +48,6 @@ fun HomeView(navController: NavController, patientId: String?,
              patientviewModel: PatientViewModel = viewModel(),
              calcularViewModel: CalcularViewModel = viewModel()
 ) {
-
 
     val state = calcularViewModel.state.value
     var showDialog by remember { mutableStateOf(false) }
@@ -148,8 +149,6 @@ fun HomeView(navController: NavController, patientId: String?,
                         "No te olvides de llenar todos los campos con los datos solicitados."
                     showDialog = true
                     // Mostrar el AlertDialog si falta algún campo
-
-
                 }
             },
             modifier = Modifier
@@ -190,11 +189,12 @@ fun HomeView(navController: NavController, patientId: String?,
                     imc = state.resultadoIMC,
                     estadoSalud = state.estadoSalud
                 )
-            }
+
                 navController.navigate("patients")
             }
-            }
         }
+    }
+}
 
 
 
